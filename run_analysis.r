@@ -65,4 +65,4 @@ names(dataSet2) <- gsub("time", "meanOfTime", names(dataSet2))
 names(dataSet2) <- gsub("frequency", "meanOfFrequency", names(dataSet2))
 
 # print dataSet2 into a text file
-write.table(dataSet2, "./submit.txt", quote = F)
+write.table(dataSet2, "./submit.txt", quote = F, row.name=F)

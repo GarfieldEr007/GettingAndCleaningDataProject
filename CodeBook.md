@@ -2,7 +2,7 @@
 
 ### The original data set
 
-The description of the original data set can be found in the **README.txt** and the **features_info.txt** files in the data folder. However, there are some flaws in those files. For example, the unit of each variable is not clearly stated and the variable names have poor readability although it is explained in those files what each abbreviation stands for. The second problem is resolved in the processed data set but I am not sure about the units of variables. I would say they follow the units of the original variables.
+The description of the original data set can be found in the **README.txt** and the **features_info.txt** files in the original data folder (not this repo). However, there are some flaws in those files. For example, the unit of each variable is not clearly stated and the variable names have poor readability although it is explained in those files what each abbreviation stands for. The second problem is resolved in the processed data set but I am not sure about the units of variables. I would say they follow the units of the original variables.
 
 ### The processed data set
 
