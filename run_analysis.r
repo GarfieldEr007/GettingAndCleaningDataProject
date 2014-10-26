@@ -35,9 +35,9 @@ names(x_train) <- featureNames$featureNames
 names(x_test) <- featureNames$featureNames
 
 # add activity labels and subject IDs into both datasets and merge them
-x_train <- cbind(x_train, subject_train, y_train)
-x_test <- cbind(x_test, subject_test, y_test)
-dataMerge <- rbind(x_train, x_test)
+train <- cbind(x_train, subject_train, y_train)
+test <- cbind(x_test, subject_test, y_test)
+dataMerge <- rbind(train, test)
 
 # extract mean() and std() related variables
 dataSet1 <- dataMerge[, grepl("mean\\(\\)|std\\(\\)", featureNames$featureNames)]
@@ -45,10 +45,11 @@ dataSet1 <- dataMerge[, grepl("mean\\(\\)|std\\(\\)", featureNames$featureNames)
 # apply descriptive activity names
 levels(dataSet1$activityLabels) <- activityLabels$activityLabels
 
-# apply descriptive variable names
+# define string patterns and their corresponding replacements
 pattern <- c("tBody", "tGravity", "Acc", "-", "mean\\(\\)", "std\\(\\)", "X", "Y", "Z", "Gyro", "Mag", "fBody|fBodyBody")
 replacement <- c("timeDomainBody", "timeDomainGravity", "Accelerometer", "", "MeanValue", "StandardDeviation", "XAxis", "YAxis", "ZAxis", "Gyroscope", "Magnitude", "frequencyDomainBody")
 
+# replace the original variable names with descriptive names
 for (i in 1:length(pattern)) {
     names(dataSet1) <- gsub(pattern[i], replacement[i], names(dataSet1))
 }
